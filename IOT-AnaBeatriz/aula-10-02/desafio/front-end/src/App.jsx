@@ -1,15 +1,22 @@
 import { useState } from 'react'
 import './App.css'
-import Login from './components/Login/Login'
-import Home from './components/Home/Home'
+import Login from './pages/Login'
+import Manutencao from './pages/Manutencao'
+import RelatorioEficiencia from './pages/RelatorioEficiencia'
+import UsoVeiculo from './pages/UsoVeiculo'
+import Veiculos from './pages/Veiculos'
+
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <>
-      <Login />
-      <Home />
+    <Login/>
+    <Manutencao/>
+    <UsoVeiculo/>
+    <Veiculos/>
+    <RelatorioEficiencia/>
     </>
   )
 }
