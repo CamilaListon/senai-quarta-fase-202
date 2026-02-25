@@ -1,10 +1,10 @@
 
-import Produto from './components/Produto';
+import Produtos from './components/Produtos';
 
 function App() {
   return (
     <>
-      <Produto />
+      <Produtos />
     </>
   )
 }
