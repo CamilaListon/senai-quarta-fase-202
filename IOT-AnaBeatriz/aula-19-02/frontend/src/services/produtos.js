@@ -20,20 +20,23 @@ export async function getProdutos() {
 export async function adicionarProduto(produto) {
   const response = await api.post("/produto", produto);
 
+  let r = "";
   if (response.status === 201)
-    return true;
+    r = response.message;
 
-  return false;
+  return r;
 }
 
 //editar produto
-export async function editarProduto() {
+export async function editarProduto(id, produto) {
   const response = await api.patch(`/produto/${id}`, produto)
 
-  if (response.status === 200)
-    return true;
 
+  if (response.status === 200) {
+    return true;
+  }
   return false;
+
 }
 
 //excluir produto
