@@ -1,50 +1,54 @@
-import { api } from "./api.js"
+import { api } from "./api.js";
 
-/**  
- * Busca lista de produtos no back-end.  
- * O back retorna: { message: string, data: Produto[] }  
- * Aqui devolvemos APENAS o array (data).  
- */
+// Função auxiliar para pegar headers com token
+const authHeader = () => {
+  const token = localStorage.getItem("token"); // token salvo no login
+  return { Authorization: `Bearer ${token}` };
+};
 
-//busca e mostra os produtos
+// Buscar produtos
 export async function getProdutos() {
-  const response = await api.get("/produto");
-  if (response.status === 200) {
-    return response.data.data ?? [];
+  try {
+    const response = await api.get("/produto", { headers: authHeader() });
+    if (response.status === 200) {
+      return response.data.data ?? [];
+    }
+    return [];
+  } catch (error) {
+    console.error("Erro ao buscar produtos:", error.response?.data || error.message);
+    return [];
   }
-  return [];
 }
 
-
-//adicionar produto
+// Adicionar produto
 export async function adicionarProduto(produto) {
-  const response = await api.post("/produto", produto);
-
-  let r = "";
-  if (response.status === 201)
-    r = response.message;
-
-  return r;
-}
-
-//editar produto
-export async function editarProduto(id, produto) {
-  const response = await api.patch(`/produto/${id}`, produto)
-
-
-  if (response.status === 200) {
-    return true;
+  try {
+    const response = await api.post("/produto", produto, { headers: authHeader() });
+    return response.status === 201;
+  } catch (error) {
+    console.error("Erro ao adicionar produto:", error.response?.data || error.message);
+    return false;
   }
-  return false;
-
 }
 
-//excluir produto
+// Editar produto
+export async function editarProduto(id, produto) {
+  try {
+    const response = await api.patch(`/produto/${id}`, produto, { headers: authHeader() });
+    return response.status === 200;
+  } catch (error) {
+    console.error("Erro ao editar produto:", error.response?.data || error.message);
+    return false;
+  }
+}
+
+// Excluir produto
 export async function excluirProduto(id) {
-  const response = await api.delete(`/produto/${id}`)
-
-  if (response.status === 200)
-    return true;
-
-  return false;
+  try {
+    const response = await api.delete(`/produto/${id}`, { headers: authHeader() });
+    return response.status === 200;
+  } catch (error) {
+    console.error("Erro ao excluir produto:", error.response?.data || error.message);
+    return false;
+  }
 }

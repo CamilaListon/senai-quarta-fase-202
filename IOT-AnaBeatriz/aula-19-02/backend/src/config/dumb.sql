@@ -34,3 +34,18 @@ INSERT INTO `dourado_lanches`.`produto` (`nome`, `valor`, `descricao`, `ativo`) 
 ('Açaí 300ml', 14.00, 'Açaí na tigela 300ml com granola', 1),
 ('Açaí 500ml', 20.00, 'Açaí na tigela 500ml com granola e banana', 1),
 ('Combo X-Burguer + Refri', 24.90, 'X-Burguer acompanhado de refrigerante lata', 1);
+
+CREATE TABLE usuario (  
+    id BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,  
+    email VARCHAR(255) NOT NULL,  
+    password_hash VARCHAR(255) NOT NULL,  
+    nome VARCHAR(120) NULL,  
+    tipo_usuario int DEFAULT '1',  
+    ativo TINYINT(1) NOT NULL DEFAULT 1,  
+    
+    created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,  
+    updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,  
+    last_login_at TIMESTAMP null,
+    
+    PRIMARY KEY (id)
+);
