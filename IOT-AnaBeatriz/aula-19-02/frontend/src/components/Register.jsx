@@ -4,7 +4,7 @@ const Register = () => {
   const [nome, setNome] = useState("");
   const [email, setEmail] = useState("");
   const [senha, setSenha] = useState("");
-  const [tipoUsuario, setTipoUsuario] = useState("user");
+  const [tipoUsuario, setTipoUsuario] = useState("1");
   const [mensagem, setMensagem] = useState("");
 
   const handleSubmit = async (e) => {
