@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom"; // <- hook do React Router
 import { api } from "../services/api.js";
+import "../style/Login.css";
+
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -32,35 +34,49 @@ const Login = () => {
 
   return (
     <div className="container">
-      <h2>Login</h2>
+      <div className="login">
+        <h2>Login</h2>
+      </div>
       <form onSubmit={handleSubmit}>
-        <div>
-          <label>Email:</label>
-          <input
-            type="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-          />
+
+        <div className="email-senha">
+          <div className="email">
+            <label>Email: </label>
+            <input
+              className="inplogin"
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+            />
+          </div>
+
+          <div className="senha">
+            <label>Senha: </label>
+            <input
+              className="inplogin"
+              type="password"
+              value={senha}
+              onChange={(e) => setSenha(e.target.value)}
+              required
+            />
+          </div>
         </div>
 
-        <div>
-          <label>Senha:</label>
-          <input
-            type="password"
-            value={senha}
-            onChange={(e) => setSenha(e.target.value)}
-            required
-          />
-        </div>
-
-        <button type="submit">Entrar</button>
+    <div className="entrar">
+        <button type="submit" id="log-in">Entrar</button>
+    </div>
 
         {error && <p style={{ color: "red" }}>{error}</p>}
       </form>
 
-      <div>
-        <a href="/register">Faça seu Cadastro!</a>
+      <div className="baixo">
+        <div className="faca-cadastro">
+          <a href="/register">Faça seu Cadastro!</a>
+        </div>
+        <div className="esqueci-senha">
+          <a href="/esqueci-senha">Esqueci Minha Senha</a>
+        </div>
       </div>
     </div>
   );

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "../style/Register.css"
 
 const Register = () => {
   const [nome, setNome] = useState("");
@@ -36,20 +37,22 @@ const Register = () => {
   };
 
   return (
-    <div>
+    <div className="container-register">
       <h2>Cadastro de Usuário</h2>
+      <div className="formulario">
+
       <form onSubmit={handleSubmit}>
         <div>
           <label>Nome:</label>
-          <input type="text" value={nome} onChange={(e) => setNome(e.target.value)} />
+          <input className="inp-register" type="text" value={nome} onChange={(e) => setNome(e.target.value)} />
         </div>
         <div>
           <label>Email:</label>
-          <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} />
+          <input className="inp-register" type="email" value={email} onChange={(e) => setEmail(e.target.value)} />
         </div>
         <div>
           <label>Senha:</label>
-          <input type="password" value={senha} onChange={(e) => setSenha(e.target.value)} />
+          <input className="inp-register" type="password" value={senha} onChange={(e) => setSenha(e.target.value)} />
         </div>
         <div>
           <label>Tipo de Usuário:</label>
@@ -58,9 +61,10 @@ const Register = () => {
             <option value="2">Admin</option>
           </select>
         </div>
-        <button type="submit">Cadastrar</button>
+        <button type="submit" id="cadastrar">Cadastrar</button>
       </form>
       {mensagem && <p>{mensagem}</p>}
+      </div>
 
       <div>
         <a href="/">Faça seu Login!</a>

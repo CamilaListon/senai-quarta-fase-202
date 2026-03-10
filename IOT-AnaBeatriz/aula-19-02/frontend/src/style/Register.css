@@ -1,0 +1,42 @@
+.container-register {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 550px;
+  padding: 40px;
+  transform: translate(-50%, -50%);
+  background: #080708;
+  box-sizing: border-box;
+  box-shadow: 0 15px 25px rgba(0, 0, 0, .6);
+  border-radius: 10px;
+  color: #76520e;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.inp-register {
+  width: 320px;
+  border: 1px solid #76520e;
+  box-shadow: 0 3px 10px #76520e;
+  border-radius: 10px;
+  height: 30px;
+}
+
+#cadastrar {
+  width: 300px;
+  border: 1px solid #76520e;
+  border-radius: 10px;
+  cursor: pointer;
+  height: 30px;
+  background-color: #76520e;
+  color: #080708;
+  font-size: 25px;
+  align-items: center;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  margin-top: 25px;
+}

@@ -132,6 +132,9 @@ const Produtos = () => {
       <button className="btn btn-warning" onClick={abrirModalAdicionar}>
         Adicionar
       </button>
+      <a href="/">
+        Sair
+      </a>
 
       <br />
       <br />
