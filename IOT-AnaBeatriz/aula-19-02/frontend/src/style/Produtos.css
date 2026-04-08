@@ -1,0 +1,52 @@
+.container-produtos {
+    background: #080708;
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, .6);
+    border-radius: 10px;
+    color: #76520e;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 950px;
+    padding: 40px;
+}
+
+.add-logout {
+    display: flex;
+    justify-content: space-between;
+    width: 550px;
+}
+
+.tabela-acao {
+    display: flex;
+    align-items: center;
+}
+
+.titulos {
+    font-size: 25px;
+}
+
+.logout {
+    border: 1px solid #76520e;
+    width: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+}
+
+
+
+.table th,
+.table td {
+    border: 1px solid #76520e;
+}
+
+.titulos th {
+    padding: 15px;
+}
+
+.linha-nome th {
+    padding: 0 15px;
+}

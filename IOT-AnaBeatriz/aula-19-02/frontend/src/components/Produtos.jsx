@@ -6,6 +6,8 @@ import {
   excluirProduto
 } from "../services/produtos";
 
+import "../style/Produtos.css"
+
 import ModalProduto from "./ModalProduto";
 import EditarProduto from "./EditarProduto";
 
@@ -126,36 +128,38 @@ const Produtos = () => {
 
 
   return (
-    <div className="container">
+    <div className="container-produtos">
       <h2>Produtos Dourado Lanches</h2>
 
+<div className="add-logout">
       <button className="btn btn-warning" onClick={abrirModalAdicionar}>
         Adicionar
       </button>
-      <a href="/">
+      <a href="/" className="logout">
         Sair
       </a>
+</div>
 
       <br />
       <br />
 
       <table className="table table-bordered">
         <thead>
-          <tr>
-            <th>Nome</th>
-            <th>Descrição</th>
-            <th>Preço</th>
-            <th>Ação</th>
+          <tr className="titulos">
+            <th className="linha-nome">Nome</th>
+            <th className="linha-nome">Descrição</th>
+            <th className="linha-nome">Preço</th>
+            <th className="linha-nome"> Ação</th>
           </tr>
         </thead>
 
         <tbody>
           {produtos && produtos.map((p) => (
             <tr key={p.id}>
-              <td>{p.nome}</td>
-              <td>{p.descricao}</td>
-              <td>{p.valor}</td>
-              <td>
+              <td className="tabela-nome">{p.nome}</td>
+              <td className="tabela-descricao">{p.descricao}</td>
+              <td className="tabela-valor">{p.valor}</td>
+              <td className="tabela-acao">
                 <button className="btn btn-primary" onClick={() => abrirModalEditar(p)}>
                   Editar
                 </button>

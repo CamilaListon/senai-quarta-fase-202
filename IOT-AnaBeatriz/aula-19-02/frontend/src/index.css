@@ -1,3 +1,6 @@
 html {
-    background-color: #08070893
+    background-color: #08070893;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
