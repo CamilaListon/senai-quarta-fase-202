@@ -149,7 +149,7 @@ const Produtos = () => {
             <th className="linha-nome">Nome</th>
             <th className="linha-nome">Descrição</th>
             <th className="linha-nome">Preço</th>
-            <th className="linha-nome"> Ação</th>
+            <th className="linha-nome">Ação</th>
           </tr>
         </thead>
 
