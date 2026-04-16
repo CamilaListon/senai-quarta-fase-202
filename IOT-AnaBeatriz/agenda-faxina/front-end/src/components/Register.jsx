@@ -51,7 +51,7 @@ const Register = () => {
           <input className="inp-register" type="email" value={email} onChange={(e) => setEmail(e.target.value)} />
         </div>
         <div>
-          <label>Senha:</label>
+          <la bel>Senha:</la>
           <input className="inp-register" type="password" value={senha} onChange={(e) => setSenha(e.target.value)} />
         </div>
         <div>
