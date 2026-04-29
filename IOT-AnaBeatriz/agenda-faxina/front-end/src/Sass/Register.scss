@@ -1,0 +1,20 @@
+.container-register {
+    background-color: rgba(141, 34, 34, 0.651);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    .formulario {
+        border: 1px solid green;
+        border-radius: 8px;
+        padding: 25px;
+        background-color: white;
+    }
+
+    .form-formulario {
+        display: flex;
+        gap: 5px;
+        flex-direction: column;
+    }
+}

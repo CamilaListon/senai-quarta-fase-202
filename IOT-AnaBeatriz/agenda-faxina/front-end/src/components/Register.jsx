@@ -1,5 +1,5 @@
 import { useState } from "react";
-
+import '../Sass/Register.scss'
 
 const Register = () => {
   const [nome, setNome] = useState("");
@@ -41,7 +41,7 @@ const Register = () => {
       <h2>Cadastro de Usuário</h2>
       <div className="formulario">
 
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className="form-formulario">
         <div>
           <label>Nome:</label>
           <input className="inp-register" type="text" value={nome} onChange={(e) => setNome(e.target.value)} />
