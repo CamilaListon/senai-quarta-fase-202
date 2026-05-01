@@ -49,20 +49,23 @@ const Agendamentos = () => {
       <h2>Agendamentos</h2>
 
       <form onSubmit={handleSubmit}>
+        <label htmlFor="">Cliente</label>
         <select onChange={(e) => setForm({ ...form, cliente_id: e.target.value })}>
           <option>Cliente</option>
           {clientes.map(c => <option key={c.id} value={c.id}>{c.nome}</option>)}
         </select>
 
+        <label htmlFor="">Profissional</label>
         <select onChange={(e) => setForm({ ...form, profissional_id: e.target.value })}>
           <option>Profissional</option>
           {profissionais.map(p => <option key={p.id} value={p.id}>{p.nome}</option>)}
         </select>
 
+        <label htmlFor="">Data de Atendimento</label>
         <input type="datetime-local"
           onChange={(e) => setForm({ ...form, data_hora: e.target.value })}
         />
-
+        <label htmlFor="">Local do trabalho</label>
         <select onChange={(e) => setForm({ ...form, tipo: e.target.value })}>
           <option value="residencial">Residencial</option>
           <option value="comercial">Comercial</option>

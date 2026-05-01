@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { api } from "../services/api";
-import "../styles/login.scss";
+import "../styles/Register.scss";
 
 const Register = () => {
   const [form, setForm] = useState({
@@ -24,35 +24,39 @@ const Register = () => {
   };
 
   return (
-    <div className="login-container">
-      <h2>Cadastro</h2>
+    <div className="cadastro-container">
+      <h2 className="login-cadastro">Cadastro</h2>
 
-      <form onSubmit={handleSubmit}>
-        <input placeholder="Nome"
-          onChange={(e) => setForm({...form, nome: e.target.value})}
-        />
+      <div className="formulario-cadastro">
+        <form onSubmit={handleSubmit} className="formulario-interno-cadastro">
+          <input placeholder="Nome" className="input-cadastro"
+            onChange={(e) => setForm({ ...form, nome: e.target.value })}
+          />
 
-        <input placeholder="Email"
-          onChange={(e) => setForm({...form, email: e.target.value})}
-        />
+          <input placeholder="Email" className="input-cadastro"
+            onChange={(e) => setForm({ ...form, email: e.target.value })}
+          />
 
-        <input type="password" placeholder="Senha"
-          onChange={(e) => setForm({...form, senha: e.target.value})}
-        />
+          <input type="password" placeholder="Senha" className="input-cadastro"
+            onChange={(e) => setForm({ ...form, senha: e.target.value })}
+          />
 
-        <select
-          onChange={(e) => setForm({...form, tipo_usuario: e.target.value})}
-        >
-          <option value="1">User</option>
-          <option value="2">Admin</option>
-        </select>
+          <select
+            onChange={(e) => setForm({ ...form, tipo_usuario: e.target.value })}
+          >
+            <option value="1">User</option>
+            <option value="2">Admin</option>
+          </select>
 
-        <button>Cadastrar</button>
-      </form>
+          <button>Cadastrar</button>
+        </form>
 
-      {msg && <p>{msg}</p>}
+        {msg && <p>{msg}</p>}
 
-      <a href="/">Voltar</a>
+        <div className="cadastrar-btn">
+          <a href="/">Voltar</a>
+        </div>
+      </div>
     </div>
   );
 };

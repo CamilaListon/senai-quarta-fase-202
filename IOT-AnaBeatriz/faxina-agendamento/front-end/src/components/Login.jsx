@@ -35,29 +35,35 @@ const Login = () => {
 
   return (
     <div className="login-container">
-      <h2>Login</h2>
+      <div className="sub-container">
+        <h2 className="login-titulo">Login</h2>
 
-      <form onSubmit={handleSubmit}>
-        <input
-          type="email"
-          placeholder="Email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-        />
+        <div className="formulario-login">
+          <form onSubmit={handleSubmit} className="formulario-interno">
+            <input className="input-login"
+              type="email"
+              placeholder="Email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
 
-        <input
-          type="password"
-          placeholder="Senha"
-          value={senha}
-          onChange={(e) => setSenha(e.target.value)}
-        />
+            <input className="input-login"
+              type="password"
+              placeholder="Senha"
+              value={senha}
+              onChange={(e) => setSenha(e.target.value)}
+            />
 
-        <button>Entrar</button>
-      </form>
+            <button className="entrar-btn">Entrar</button>
+          </form>
 
-      {error && <p className="erro">{error}</p>}
+          {error && <p className="erro">{error}</p>}
+          <div className="criar-conta">
+            <a href="/register" id="criar-conta-botao">Criar conta</a>
+          </div>
+        </div>
 
-      <a href="/register">Criar conta</a>
+      </div>
     </div>
   );
 };
