@@ -1,16 +1,13 @@
-import { Routes, Route } from 'react-router-dom'
-import './App.css'
-
-import Login from './components/Login'
-import Register from './components/Register'
+import AppRoutes from './routes/AppRoutes';
+import { AuthProvider } from './context/AuthContext';
+import './styles/global.scss';
 
 function App() {
   return (
-    <Routes>
-      <Route path="/" element={<Login />} />
-      <Route path="/register" element={<Register />} />
-    </Routes>
-  )
+    <AuthProvider>
+      <AppRoutes />
+    </AuthProvider>
+  );
 }
 
-export default App
+export default App;
