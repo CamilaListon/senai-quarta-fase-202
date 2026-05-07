@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { registerRequest } from '../api/api';
+import { registerRequest } from '../services/authService.js';
 import { useNavigate } from 'react-router-dom';
 import '../styles/register.scss';
 
