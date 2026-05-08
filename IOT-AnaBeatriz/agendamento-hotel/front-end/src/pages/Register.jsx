@@ -28,29 +28,31 @@ export default function Register() {
 
   return (
     <div className="register-container">
-      <form onSubmit={handleSubmit}>
+      <form className='form-cadastro' onSubmit={handleSubmit}>
         <h2>Cadastro</h2>
 
-        <input placeholder="Nome"
+        <input className='form-input-cadastro' placeholder="Nome"
           onChange={e => setForm({ ...form, nome: e.target.value })}
         />
 
-        <input placeholder="Email"
+        <input className='form-input-cadastro' placeholder="Email"
           onChange={e => setForm({ ...form, email: e.target.value })}
         />
 
-        <input type="password" placeholder="Senha"
+        <input className='form-input-cadastro' type="password" placeholder="Senha"
           onChange={e => setForm({ ...form, senha: e.target.value })}
         />
 
-        <select
+        <select className='form-input-cadastro'
           onChange={e => setForm({ ...form, tipo: e.target.value })}
         >
           <option value="CLIENTE">Cliente</option>
           <option value="FUNCIONARIO">Funcionário</option>
         </select>
-
-        <button>Cadastrar</button>
+        <div className="btn-geral">
+          <button className='btn-cadastrar'>Cadastrar</button>
+          <a className='btn-login'>Ja tem cadastro? Faça seu login</a>
+        </div>
       </form>
     </div>
   );

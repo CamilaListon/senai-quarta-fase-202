@@ -25,17 +25,21 @@ export default function Admin() {
   }, []);
 
   return (
-    <div className="admin">
-      <h2>Painel Administrativo</h2>
 
-      {reservas.map(r => (
-        <div key={r.id} className="card">
-          <p>Reserva #{r.id}</p>
-          <button onClick={() => cancelar(r.id)}>
-            Cancelar
-          </button>
-        </div>
-      ))}
+    <div className="container-admin">
+
+      <div className="admin">
+        <h2 className='titulo-painel'>Painel Administrativo</h2>
+      </div>
+
+      <div className="topo-site">
+
+        <p className='categorias'>Data Check-in</p>
+        <p className='categorias'>Data Chekout</p>
+        <p className='categorias'>Quartos</p>
+        <p className='categorias'>Relatórios</p>
+      </div>
     </div>
+
   );
 }

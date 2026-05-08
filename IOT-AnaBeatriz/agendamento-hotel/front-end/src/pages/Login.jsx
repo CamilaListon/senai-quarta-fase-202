@@ -24,24 +24,24 @@ export default function Login() {
 
   return (
     <div className="login-container">
-      <form onSubmit={handleSubmit}>
+      <form className='form-login' onSubmit={handleSubmit}>
         <h2>Login</h2>
 
-        <input
+        <input className='input-form-login'
           type="email"
           placeholder="Email"
           onChange={e => setForm({ ...form, email: e.target.value })}
         />
 
-        <input
+        <input className='input-form-login'
           type="password"
           placeholder="Senha"
           onChange={e => setForm({ ...form, senha: e.target.value })}
         />
 
-        <button>Entrar</button>
+        <button className='btn-entrar'>Entrar</button>
 
-        <p onClick={() => navigate('/register')}>
+        <p className='btn-criar-conta' onClick={() => navigate('/register')}>
           Criar conta
         </p>
       </form>
