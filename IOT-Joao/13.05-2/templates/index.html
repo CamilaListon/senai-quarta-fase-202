@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Primeiro passo Flask</title>
+</head>
+
+<body>
+    <h1>Servidor Flask funcionando</h1>
+    <p>Se você está vendo esta página, o backend entregou este HTML.</p>
+    <h1>Passo 2</h1>
+    <form action="/enviar" method="POST">
+        <label for="nome">Digite seu nome:</label>
+        <input type="text" name="nome" id="nome" required>
+        <button type="submit">Enviar</button>
+    </form>
+    <h1>Passo 3</h1>
+    <form action="/upload" method="POST" enctype="multipart/form-data">
+        <label for="imagem">Escolha uma imagem:</label>
+        <input type="file" name="imagem" id="imagem" accept="image/*" required>
+        <button type="submit">Enviar Imagem</button>
+    </form>
+    <h1>Passo 4</h1>
+    <form action="/recortar" method="POST" enctype="multipart/form-data">
+        <div>
+            <label for="imagem">Escolha uma imagem:</label>
+            <input type="file" name="imagem" id="imagem" accept="image/*" required>
+        </div>
+
+        <div>
+            <label for="x">X:</label>
+            <input type="number" name="x" id="x" required>
+        </div>
+        <div>
+            <label for="y">Y:</label>
+            <input type="number" name="y" id="y" required>
+        </div>
+        <div>
+            <label for="w">Largura:</label>
+            <input type="number" name="w" id="w" required>
+        </div>
+        <div>
+            <label for="h">Altura:</label>
+            <input type="number" name="h" id="h" required>
+        </div>
+        <div>
+            <label for="nome_saida">Nome do novo arquivo:</label>
+            <input type="number" name="nome_saida" id="nome_saida" required>
+        </div>
+        <button type="submit">Enviar Dados</button>
+    </form>
+
+    
+
+</body>
+</htm1>
