@@ -41,42 +41,6 @@ def upload():
     
     return f"Upload realizado com sucesso. Arquivo salvo em: {caminho_arquivo}"
 
-# @app.route("/recortar", methods=["POST"])
-# def recortar():
-#     if "imagem" not in request.files:
-#         return "Nenhuma imagem foi enviada"
-    
-#     arquivo = request.files["imagem"]
-#     nome_saida = request.form.get("nome_saida", "").strip()
-#     x = request.form.get("x", "").strip()
-#     y = request.form.get("y", "").strip()
-#     w = request.form.get("w", "").strip()
-#     h = request.form.get("h", "").strip()
-    
-#     if arquivo.filename == "":
-#         return "Nenhum arquivo foi selecionado"
-    
-#     if not nome_saida:
-#         return "Onome do arquivo de saida não foi informado"
-    
-#     if not x or not y or not w or not h:
-#         return "Os dados de recorte estão incompletos"
-    
-#     nome_entrada_seguro = secure_filename(arquivo.filename)
-#     caminho_upload = os.path.join(UPLOAD_FOLDER, nome_entrada_seguro)
-#     arquivo.save(caminho_upload)
-    
-#     return f"""
-#     <h1>Dados recebidos com sucesso<h1/>
-#     <p><strong>Imagem original salva em: <strong/> {caminho_upload}<p/>
-#     <p><strong>Nome do novo arquivo: <strong/> {nome_saida}<p/>
-#     <p><strong>X: <strong/>{x}<p/>
-#     <p><strong>Y: <strong/>{y}<p/>
-#     <p><strong>Largura: <strong/>{w}<p/>
-#     <p><strong>Altura: <strong/>{h}<p/>
-#     <p>Neste passo, o sistema ainda não recorta<p/>
-#     """
-    
     
 @app.route("/recortar", methods=["POST"])
 def recortar():
@@ -142,6 +106,8 @@ def recortar():
 
     except Exception as e:
         return jsonify({"erro": str(e)}), 500
+
+
     
 
 if __name__ == "__main__":

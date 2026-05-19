@@ -22,7 +22,7 @@
         <button type="submit">Enviar Imagem</button>
     </form>
     <h1>Passo 4</h1>
-    <form action="/recortar" method="POST" enctype="multipart/form-data">
+    <form id="formRecorte">
         <div>
             <label for="imagem">Escolha uma imagem:</label>
             <input type="file" name="imagem" id="imagem" accept="image/*" required>
@@ -50,8 +50,33 @@
         </div>
         <button type="submit">Enviar Dados</button>
     </form>
+    <p id="resultado">Resultado:</p>
 
-    
+    <script>
+        const form = document.getElementById("formRecorte");
+        const resultado = document.getElementById("resultado");
+
+        form.addEventListener("submit", async (e) => {
+            e.preventDefault();
+
+            const dados = new FormData(form);
+
+            const resposta = await fetch("/recortar", {
+                method: "POST",
+                body: dados
+            });
+
+            const json = await resposta.json();
+
+            if (resposta.ok) {
+                resultado.textContent = `Sucesso: ${json.mensagem} - ${json.arquivo}`;
+            } else {
+                resultado.textContent = `Erro: ${json.erro}`;
+            }
+        });
+
+    </script>
+
 
 </body>
 </htm1>
